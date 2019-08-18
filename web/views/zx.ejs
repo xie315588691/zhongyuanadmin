@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>新闻资讯_中源软件科技（广州）有限公司</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link rel="Bookmark" href="images/favicon.ico"/>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <link type="text/css" rel="stylesheet" href="css/gobal.css"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="css/animate.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <script type="text/javascript" src="js/wow.min.js"></script>
+
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+</head>
+<body>
+
+<div id="warpper">
+
+    <%- include component/header.ejs %>
+    <section>
+        <div class="contain">
+            <div class="nybanner"
+                 style="background-image:url(http://image.xiaoxinseo.com/8e3202ada23282161affdf8e61446b4c.jpg);">
+
+                <div class="ny-title">
+                    <h2 class="wow bounceInDown"><img src="images/2017111617503466.png"/></h2>
+                    <h3 class="wow fadeInUp"><img src="images/2017111617503476.png"/></h3></div>
+            </div>
+            <div class="navigation">
+                <div class="layout">
+                    <a class="home" href="index.html">首页</a>
+                    <em>></em>
+                    <a class="on" href="zx.html">新闻资讯</a>
+                </div>
+            </div>
+            <div class="news-warp">
+                <div class="layout">
+                    <!--                    <div class="news-screen clearfix">-->
+                    <!--                        <div class="screenleft">-->
+                    <!--                            <ul>-->
+                    <!--                                <li><a href="./fangAn.html">税筹方案</a></li>-->
+                    <!--                                <li><a href="xwinfo.html#">行业干货</a></li>-->
+                    <!--                                <li><a href="gd/">常见案例</a></li>-->
+                    <!--                                <li><a href="blog/">常见问题</a></li>-->
+                    <!--                            </ul>-->
+                    <!--                        </div>-->
+                </div>
+
+                <div class="newslist">
+                    <div class="hotbom clearfix" id="ul">
+                        <div class="item" v-for="item in articles" :key="item.id">
+                            <a :href="'/news/'+item.id">
+                                <div class="tmain">
+                                    <span class="time">{{ item.time}}</span>
+                                    <h3 class="title overflowtxt">{{item.title}}</h3>
+                                    <div class="h3">
+                                        {{item.descript}}
+                                    </div>
+                                    <span class="more">Load More</span>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="pageinfo" style="line-height:40px;">
+                    <div class="block">
+                        <el-pagination
+                                @size-change="handleSizeChange"
+                                @current-change="handleCurrentChange"
+                                :current-page="currentPage"
+                                :page-sizes="[16, 20, 40]"
+                                :page-size="pageSize"
+                                layout="total, sizes, prev, pager, next, jumper"
+                                :total="totalPage">
+                        </el-pagination>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gf-demand">
+            <div class="layout">
+                <h2 class="h2">I NEED TO BUILD WEBSITE</h2>
+                <h3 class="h3">获取免费税筹方案</h3>
+                <form action="#" method="post"
+                      onSubmit="return jianzhan()">
+                    <div class="write">
+                        <input class="text1" type="text" id="name" name="name" placeholder="称呼姓名" value="">
+                        <input class="text2" type="text" id="phone" name="phone" placeholder="联系电话" value="">
+                        <input class="text3" type="text" id="content" name="content"
+                               placeholder="企业名称" value="">
+                        <input type="hidden" name="pid" value="1"/>
+                        <input class="submit" type="submit" value="领取免费税筹方案">
+                    </div>
+                </form>
+                <i class="italic">*请认真填写需求信息，我们会在24小时内与您取得联系。</i>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<%- include component/footer.ejs %>
+
+
+</div>
+<script src="/js/vue.min.js"></script>
+<script src="/js/axios.min.js"></script>
+
+
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="/js/zx.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>联系我们_中源软件科技（广州）有限公司</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link rel="Bookmark" href="images/favicon.ico"/>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <link type="text/css" rel="stylesheet" href="css/gobal.css"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="css/animate.min.css"/>
+    <script type="text/javascript" src="/js/vue.min.js"></script>
+
+    <script type="text/javascript" src="js/wow.min.js"></script>
+</head>
+<body>
+
+<div id="warpper">
+
+    <%- include component/header.ejs %>
+    <section>
+        <div class="contain">
+            <div class="nybanner" style="background-image:url( http://image.xiaoxinseo.com/images/2018011711204802.jpg);">
+
+                <div class="ny-title">
+                    <h2 class="wow bounceInDown"><img src="images/2017082111095163.png"/></h2>
+                    <h3 class="wow fadeInUp"><img src="images/2017082111095108.png"/></h3></div>
+            </div>
+            <div class="navigation">
+                <div class="layout">
+                    <a class="home" href="index.html">首页</a>
+                    <em>></em>
+                    <a class="on" href="contact.html">联系我们</a>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div class="layout clearfix">
+                    <div class="tw">
+                        <h2 class="name">
+                            中源软件科技（广州）有限公司</h2>
+                        <dl class="info">
+                            <dd>
+                                <img src="images/con01.png"/>广东省广州市海珠区保利叁悦广场C塔8楼811单元
+                            </dd>
+                            <dd>
+                                <img src="images/con02.png"/>020-32297009 / 13322813720
+                            </dd>
+                            <dd>
+                                <img src="images/con04.png"/>020-32297009
+                            </dd>
+                            <dd>
+                                <img src="images/con05.png"/>http://www.qibaoying.com/
+                            </dd>
+                        </dl>
+                    </div>
+                    <form action="http://wpa.qq.com/msgrd?v=3&amp;uin=980732589&amp;site=qq&amp;menu=yes" method="post"
+                          onSubmit="return contact()">
+                        <div class="tw">
+                            <ul class="conform clearfix">
+                                <li class="item1">
+                                    <input class="context" id="name1" name="name" type="text"
+                                           placeholder="您的姓名" value=""></li>
+                                <li class="item2"><input class="context" id="phone1" name="phone" type="text"
+                                                         placeholder="您的电话" value=""></li>
+                                <li class="item3"><input class="context" id="qq" name="email"
+                                                         onKeyUp="value=value.replace(/[^\d]/i,'')" type="text"
+                                                         placeholder="您的QQ" value=""></li>
+                                <li class="item4"><textarea class="conteat" id="content1" name="content"
+                                                            placeholder="您的留言内容"></textarea></li>
+                                <li class="item5">
+                                    <input type="hidden" name="pid" value="2"/>
+                                    <input class="consub" type="submit" value="立即提交">
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="contact-map"></div>
+        </div>
+    </section>
+
+    <%- include component/footer.ejs %>
+
+
+</div>
+<script src="/js/head.js"></script>
+<script>
+    function contact() {
+        var name = $('#name1').val();
+        var phone = $('#phone1').val();
+        var qq = $('#qq').val();
+        var content = $('#content1').val();
+        var msg = '';
+        if (name == '') {
+            msg += '请输入您的姓名！\n';
+        }
+        if (phone == '') {
+            msg += '请输入您的联系电话！\n';
+        }
+        if (qq == '') {
+            msg += '请输入您的QQ！\n';
+        }
+        if (content == '') {
+            msg += '您的留言内容！\n';
+        }
+        if (msg) {
+            alert(msg);
+            return false;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>
